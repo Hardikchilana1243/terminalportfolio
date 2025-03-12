@@ -1,6 +1,6 @@
 const terminalarea = document.querySelector(".terminal")
 const text = document.querySelector(".inputline")
-
+const maparea = document.getElementById("map")
 const body = document.querySelector("body")
 
 
@@ -27,6 +27,8 @@ function processfunction(command){
    }else if(command =="about" || command =="About"){
     appendinterminal("-------------------------")
     appendinterminal("I am Passionate CS Student from India. I like making cool things")
+    appendinterminal("I am based in India")
+    maparea.classList.remove("hidden")
     appendinterminal("-------------------------")
     
    }else if(command =="projects" || command == "Commands"){
@@ -52,6 +54,11 @@ function processfunction(command){
 
     
 }
+var map = L.map('map').setView([20.5937,  78.9629], 13);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 3,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
 
 function godown() {
     terminalarea.scrollTop = terminalarea.scrollHeight;

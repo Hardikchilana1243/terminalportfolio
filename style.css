@@ -42,3 +42,10 @@ html,body{
 .line{
     font-weight: 200;
 }
+#map{
+     height: 180px;
+     width: 180px;
+}
+.hidden{
+    display: none;
+}
